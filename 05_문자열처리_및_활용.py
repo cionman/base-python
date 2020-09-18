@@ -29,6 +29,8 @@ print(type(str_t1), len(str_t1))
 print(type(str_t2), len(str_t2))
 
 # 이스케이프 문자 사용
+# ”” (쌍따옴표), ‘‘(작은따옴표) 모두 사용가능합니다. 자바스크립트와 같습니다.
+# 큰따옴표 안에 작은따옴표는 들어갈 수 있고, 반대로 큰따옴표 안에 작은따옴표 들어갈 수 있습니다
 
 escape_str1 = "Do you have a \"big collection\"?"
 escape_str2 = 'What\'s on TV?'
@@ -40,6 +42,7 @@ print(escape_str1)
 print(escape_str2)
 print(escape_str3)
 print(escape_str4)
+print("abc" "def") # "abc" "def" 쉼표가 없으면 합쳐
 
 # 탭, 줄바꿈
 t_s1 = "Tab \tClick!"
@@ -111,6 +114,15 @@ print("sorted: ", sorted(str_o1))  # reverse=True
 print("reversed1: ", reversed(str_o2)) #list 형 변환
 print("reversed2: ", list(reversed(str_o2)))
 
+s = "  abc   "
+print("strip: ", s.strip()) # 좌우 공백 제거
+
+departure, _, arrival = "Seattle-Seoul".partition('-')
+print("departure: ", departure)
+print("_: ", _)
+print("arriver : ", arrival)
+
+
 # immutable 설명
 im_str = "Good Boy!"
 
@@ -144,3 +156,21 @@ a = 't'
 
 print(ord(a))
 print(chr(116))
+
+# 이스케이프 문자를 통해 유니코드 문자열을 입력할 수 있습니다
+
+print('Vi er s\u00e5 glad for \u00e5 h\u00f8re og l\u00e6re om Python!')
+
+# 반대로 이스케이프 문자를 막는 raw문자열을 문자열 앞에 r 을 붙여 만들 수 있습니다.
+a = r"이스케이프 문자 \n 라인이 안바뀜 \\ 쌍따옴표를 또 쓰기 \"\" "
+print(a)
+
+# 문자열 포맷
+
+print("Name: {}, Age: {}".format("철수", 13))
+print("Name: {name}, Age: {age}: {name}의 나이가 {age}".format(age=19, name='재석'))
+pos = [12.5, 35, 90]
+print("A의 좌표는 x = {p[0]}, y = {p[1]}, z = {p[2]}".format(p=pos))
+
+import math
+print('수학에서 파이= {m.pi}'.format(m=math))

@@ -62,9 +62,9 @@ else:
 
 city = "Seoul"
 if city:
+    # 이쪽이 출력된다.
     print("You are in:", city)
 else:
-    # 이쪽이 출력된다.
     print("Please enter your city")
 
 # 논리연산자
